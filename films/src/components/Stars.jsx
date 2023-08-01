@@ -1,13 +1,9 @@
-import React from 'react'
-const uid = function () {
-    return Date.now().toString(36) + Math.random().toString(36).substr(2);
-}
-
 export default function Stars(props) {
-    const { count } = props;
+    const { count } = props ?? 0;
+
+    if (count > 5 || count < 1) count = 0;
 
     const arr = Array.from({ length: count }, (_, index) => index);
-    let c = 0;
 
     return (
         <ul class="card-body-stars u-clearfix">
