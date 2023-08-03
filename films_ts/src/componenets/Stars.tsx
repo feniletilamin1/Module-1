@@ -1,7 +1,11 @@
 import Star from "./Star";
 
-export default function Stars(props) {
-    const { count } = props ?? 0;
+type TStarProps  = {
+    count: number
+}
+
+export default function Stars(props: TStarProps) {
+    let { count } = props ?? 0;
 
     if (count > 5 || count < 1) count = 0;
 
@@ -9,8 +13,8 @@ export default function Stars(props) {
 
     return (
         <ul className="card-body-stars u-clearfix">
-            {arr.map((star, index) =>
-                <Star key={index} />
+            {arr.map((star) =>
+                <Star key={star} />
             )}
         </ul>
     )

@@ -1,10 +1,12 @@
-import Stars from './components/Stars'
+import Stars from './componenets/Stars'
+
 import './App.css'
 
 function App() {
 
+
   return (
-    <Stars count={5} />
+    <Stars count={3} />
   )
 }
 
