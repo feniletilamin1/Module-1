@@ -1,0 +1,46 @@
+.App {
+  padding: 30px 0;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.form {
+  display: flex;
+  align-items: flex-end;
+}
+
+.form__item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form__label {
+  margin-bottom: 5px;
+}
+
+.form__input {
+  border: 1px solid black;
+  border-radius: 30px;
+  padding: 10px 10px;
+}
+
+.form__item:not(:first-child) {
+  margin-left: 40px;
+}
+
+.form__submit {
+  margin-left: 20px;
+  cursor: pointer;
+  padding: 10px 30px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 30px;
+}
+
+.table {
+  border: 1px solid black;
+  margin-top: 20px;
+}
+
+
