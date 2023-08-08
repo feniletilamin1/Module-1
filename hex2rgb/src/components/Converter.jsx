@@ -13,12 +13,13 @@ export default function Converter() {
     const reg = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
     const [value, setValue] = useState("#412545")
     const label = useRef(null)
+    const input = useRef(null);
     let rgb = hex2rgb(value);
 
-    const changeHandler = (e) => {
+    const changeHandler = () => {
+        const inputValue = input.current.value;
         if (inputValue.length === 7) {
             const labelElement = label.current;
-            const inputValue = e.target.value;
             if (reg.test(inputValue)) {
                 setValue(inputValue);
                 rgb = hex2rgb(value);
@@ -32,7 +33,7 @@ export default function Converter() {
     return (
         <div className="converter-wrapper" style={{ backgroundColor: value }}>
             <form action="#" className="conveter">
-                <input onChange={changeHandler} id="hex" type="text" className="converter__input" placeholder={value} />
+                <input onChange={changeHandler} id="hex" type="text" className="converter__input" placeholder={value} ref={input} />
                 <label ref={label} htmlFor="hex" className="converter__label">{`rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`}</label>
             </form>
         </div >
